@@ -4,6 +4,8 @@
 
 This project provides **real-time Implied Volatility (IV) analytics** for all F&O (Futures & Options) listed stocks and indices in the Indian markets (NSE). It calculates and displays critical volatility metrics that are **NOT available on standard Indian brokers' platforms** like Zerodha, Upstox, Angel One, or Groww.
 
+![IV Dashboard Screenshot](assets/app.png)
+
 While these brokers show basic option chains and Greeks, they typically don't provide historical IV analysis, IV Rank, IV Percentile, or comparative volatility metrics - all essential for serious options trading.
 
 ## 🎯 Who Is This For?
