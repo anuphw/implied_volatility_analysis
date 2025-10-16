@@ -136,6 +136,26 @@ def main():
     st.set_page_config(page_title="IV Dashboard", layout="wide")
     st.title("📈 IV Dashboard")
 
+    # IV Metrics Definitions
+    with st.expander("📚 IV Metrics Definitions"):
+        st.markdown("""
+        **IV Rank**: Measures where current IV sits relative to its 365-day range (0-100%)
+        - Formula: `(current_iv - min_iv) / (max_iv - min_iv) × 100`
+        - High rank (>80) suggests IV is expensive, low rank (<20) suggests IV is cheap
+
+        **IV Percentile**: Percentage of days over the last 365 days where IV was at or below current level
+        - Formula: `(days_with_iv ≤ current_iv) / total_days × 100`
+        - More robust than rank as it's not skewed by extreme outliers
+
+        **IV Mean Ratio**: Current IV compared to its 365-day average
+        - Formula: `current_iv / mean_iv`
+        - >1.0 means IV is above average, <1.0 means below average
+
+        **Recent IV Jump**: Current IV compared to recent 6-day average IV
+        - Formula: `current_iv / recent_6day_mean_iv`
+        - Helps identify sudden spikes or drops in volatility expectations
+        """)
+
     df = get_iv_summary()
     st.subheader("IV Rank & Percentile Table (last 365 days)")
 
